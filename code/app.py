@@ -3,7 +3,7 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 
 # Load data
-df = pd.read_csv('../final_data/metro_data.csv')
+df = pd.read_csv("./final_data/final_data.csv")
 
 # Get user input
 st.sidebar.header('Rank the importance of each factor')
