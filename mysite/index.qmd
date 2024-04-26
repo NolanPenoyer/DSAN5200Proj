@@ -1,0 +1,161 @@
+---
+title: "Mysite"
+---
+
+```{python}
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
+import plotly.express as px
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+import geopandas as gpd
+```
+
+```{python}
+us_states=gpd.read_file("../final_data/tl_2020_us_state.shp")
+```
+
+```{python}
+df = pd.read_csv("../final_data/final_data.csv")
+
+# Initialize the Dash app
+app = dash.Dash(__name__)
+```
+
+```{python}
+columns_to_normalize = ['personal.income', 'Median.Rent', 'median.sale.price',
+                        'Walkable', 'Unemployment', 'Purchase_power_100_dollars',
+                        'Violent_Crime_Rate_per_100k', 'Non_Violent_Crime_Rate_per_100k']
+```
+
+```{python}
+scaler = MinMaxScaler()
+df[columns_to_normalize] = scaler.fit_transform(df[columns_to_normalize])
+```
+
+```{python}
+df.head()
+```
+
+```{python}
+# Define the layout of the app
+app.layout = html.Div([
+    html.H1("Choosing Where to Live",style={"color": "white"}),
+    html.Div([
+        html.Label("Importance of Rent",style={"color": "white"}),
+        dcc.Slider(
+            id="Median Rent",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Income",style={"color": "white"}),
+        dcc.Slider(
+            id="Personal Income",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Home Sale Price",style={"color": "white"}),
+        dcc.Slider(
+            id="Median Sale Price",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Walkablity",style={"color": "white"}),
+        dcc.Slider(
+            id="Walkable",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Job Security and Opportunity",style={"color": "white"}),
+        dcc.Slider(
+            id="Unemployment",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Purchasing Power",style={"color": "white"}),
+        dcc.Slider(
+            id="Purchasing Power",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        html.Label("Importance of Violent Crime Rate",style={"color": "white"}),
+        dcc.Slider(
+            id="Crime Rate",
+            min=0,
+            max=1,
+            step=0.1,
+            value=0.5,
+            marks={i/10: str(i/10) for i in range(11)},
+            tooltip={"always_visible": False, "placement": "bottom"}
+        ),
+        # Repeat this pattern for other variables
+    ], style={"width": "50%", "margin": "auto"}),
+    dcc.Graph(id="city-graph")
+])
+
+# Define callback to update the graph based on user input
+@app.callback(
+    Output("city-graph", "figure"),
+    [Input("Median Rent", "value"),
+     Input("Personal Income", "value"),
+     Input("Median Sale Price","value"),
+     Input("Walkable","value"),
+     Input("Unemployment","value"),
+     Input("Purchasing Power","value"),
+     Input("Crime Rate","value")])
+    # Add more Inputs for other variables
+def update_graph(importance_personal_income, importance_median_rent,importance_median_sale_price,importance_walkable,importance_unemployment,importance_purchasing_power,importance_crime):
+    # Weighted sum of variables
+    df["Weighted_Sum"] = (df["Median.Rent"] * importance_personal_income +
+                          df["personal.income"] * importance_median_rent + df["median.sale.price"]*importance_median_sale_price +df["Walkable"]*importance_walkable+df["Unemployment"]*importance_unemployment+
+                          df["Purchase_power_100_dollars"]*importance_purchasing_power+df["Violent_Crime_Rate_per_100k"]*importance_crime)
+    
+    # Define color scale mapping each political affiliation to a specific color
+    color_scale = {
+        "D": "blue",
+        "R": "red",
+        "I": "yellow",
+        "Nonpartisan": "grey"
+    }
+    
+    # Plotly scatter plot
+    fig = px.scatter_geo(df, lat='Latitude', lon='Longitude', scope='usa', size="Weighted_Sum", color="Political_Affiliation",
+                         color_discrete_map=color_scale, custom_data=["REGION", "Weighted_Sum"])
+    
+    fig.update_layout(title="City Data Visualization on US Map",
+                      mapbox_style="carto-positron",
+                      mapbox_zoom=3,
+                      mapbox_center={"lat": 37.0902, "lon": -95.7129})
+    
+    fig.update_traces(hovertemplate='<b>%{customdata[0]}</b><br>Weighted Sum: %{customdata[1]:.2f}')
+    
+    return fig
+# Run the app
+if __name__ == "__main__":
+    app.run_server(debug=True,port=8052)
+```
