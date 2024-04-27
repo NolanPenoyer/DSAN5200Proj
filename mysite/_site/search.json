@@ -1,52 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Where to live",
     "section": "",
-    "text": "REGION\npersonal.income\nMedian.Rent\nmedian.sale.price\nWalkable\nUnemployment\nPurchase_power_100_dollars\nLatitude\nLongitude\nPolitical_Affiliation\nYear_Fahrenheit\nViolent_Crime_Rate_per_100k\nNon_Violent_Crime_Rate_per_100k\ncoast\n\n\n\n\n0\nAtlanta\n64107\n2113.00\n357000.0\n49.4\n3.0\n100.89\n33.7490\n-84.3880\nD\n62.6\n5727.52\n4776.43\neast\n\n\n2\nBaltimore\n71420\n1981.50\n325500.0\n44.7\n2.8\n95.23\n39.2904\n-76.6122\nD\n55.6\n6997.68\n4928.11\neast\n\n\n3\nBoston\n94082\n3939.50\n600000.0\n74.3\n3.3\n91.17\n42.3601\n-71.0589\nD\n51.7\n2758.22\n2089.02\neast\n\n\n4\nCharlotte\n65156\n1923.50\n365000.0\n51.7\n3.6\n103.52\n35.2271\n-80.8431\nD\n60.9\n3836.39\n3815.18\neast\n\n\n16\nMiami\n77732\n3056.50\n465000.0\n54.2\n2.5\n90.97\n25.7617\n-80.1918\nR\n76.9\n4750.89\n4014.18\neast\n\n\n19\nNew York\n84084\n4120.75\n565000.0\n100.0\n4.7\n87.28\n40.7128\n-74.0060\nD\n55.3\n1987.49\n1448.59\neast\n\n\n20\nOrlando\n53959\n2246.50\n380000.0\n32.4\n3.2\n100.19\n28.5383\n-81.3792\nD\n73.5\n6206.38\n5454.57\neast\n\n\n21\nPhiladelphia\n73291\n2340.25\n301250.0\n55.1\n3.8\n100.80\n39.9526\n-75.1652\nD\n55.8\n4037.27\n3063.48\neast\n\n\n31\nTampa\n60091\n2207.50\n365000.0\n35.4\n3.3\n101.04\n27.9506\n-82.4572\nD\n73.2\n2218.24\n1743.68\neast\n\n\n32\nVirginia Beach\n57873\n1826.00\n309750.0\n34.5\n3.0\n102.26\n36.8529\n-75.9780\nR\n65.0\n2083.40\n1934.62\neast\n\n\n33\nWashington, DC\n83010\n2657.25\n515000.0\n72.6\n3.0\n89.82\n38.9072\n-77.0369\nD\n58.2\n5104.96\n4156.22\neast"
+    "text": "Have you ever dreamed of living in a big city?\nOr maybe you already live in one and you are looking for a new place to move to?\nDo you feel like you are missing out on something?\nIs there something more to life than what you are currently experiencing?\nIf you answered yes to any of these questions, then you’ve come to the right place!\nThis website is dedicated to helping people like you find the perfect city to live in. Whether you are an aspiring artist, a young professional, a graduate student, or a retiree, we have the perfect city for you. Our website is designed to help you find the perfect city based on essential living factors such as cost of living, quality of life, safety, and more. We have taken the most prominent metropolitan areas in the United States and provided their livability based on your personal preferences at your fingertips; so you can make an informed decision about where to live. All you have to do is adjust the sliders to your preferences and we will do the rest.\nThe bigger the circle, the better the city is for you! Additionally, we have provided a complementary table that ranks the cities based on your preferences.\nSo what are you waiting for? Find your next adventure now!"
   },
   {
-    "objectID": "plot_attempt_2.html",
-    "href": "plot_attempt_2.html",
-    "title": "Picking where to live",
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Where to live",
     "section": "",
-    "text": "import dash\nfrom dash import dcc, html\nfrom dash.dependencies import Input, Output\nimport plotly.express as px\nimport pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\nimport geopandas as gpd\n\n\nus_states=gpd.read_file(\"../final_data/tl_2020_us_state.shp\")\n\n\ndf = pd.read_csv(\"../final_data/final_data.csv\")\n\n# Initialize the Dash app\napp = dash.Dash(__name__)\n\n\ncolumns_to_normalize = ['personal.income', 'Median.Rent', 'median.sale.price',\n                        'Walkable', 'Unemployment', 'Purchase_power_100_dollars',\n                        'Violent_Crime_Rate_per_100k', 'Non_Violent_Crime_Rate_per_100k']\n\n\nscaler = MinMaxScaler()\ndf[columns_to_normalize] = scaler.fit_transform(df[columns_to_normalize])\n\n\ndf.head()\n\n\n\n\n\n\n\n\n\nREGION\npersonal.income\nMedian.Rent\nmedian.sale.price\nWalkable\nUnemployment\nPurchase_power_100_dollars\nLatitude\nLongitude\nPolitical_Affiliation\nYear_Fahrenheit\nViolent_Crime_Rate_per_100k\nNon_Violent_Crime_Rate_per_100k\n\n\n\n\n0\nAtlanta\n0.145435\n0.244568\n0.200903\n0.302069\n0.258065\n0.747856\n33.7490\n-84.3880\nD\n62.6\n0.603151\n0.705136\n\n\n1\nAustin\n0.303252\n0.178534\n0.307280\n0.310345\n0.483871\n0.707976\n30.2672\n-97.7431\nD\n69.3\n0.262020\n0.368896\n\n\n2\nBaltimore\n0.250240\n0.195090\n0.165350\n0.237241\n0.193548\n0.505146\n39.2904\n-76.6122\nD\n55.6\n0.807988\n0.737275\n\n\n3\nBoston\n0.575018\n0.931803\n0.475169\n0.645517\n0.354839\n0.331046\n42.3601\n-71.0589\nD\n51.7\n0.124295\n0.135701\n\n\n4\nCharlotte\n0.160468\n0.173267\n0.209932\n0.333793\n0.451613\n0.860635\n35.2271\n-80.8431\nD\n60.9\n0.298170\n0.501457\n\n\n\n\n\n\n\n\n\n# Define the layout of the app\napp.layout = html.Div([\n    html.H1(\"Choosing Where to Live\",style={\"color\": \"white\"}),\n    html.Div([\n        html.Label(\"Importance of Rent\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Median Rent\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Income\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Personal Income\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Home Sale Price\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Median Sale Price\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Walkablity\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Walkable\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Job Security and Opportunity\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Unemployment\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Purchasing Power\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Purchasing Power\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        html.Label(\"Importance of Violent Crime Rate\",style={\"color\": \"white\"}),\n        dcc.Slider(\n            id=\"Crime Rate\",\n            min=0,\n            max=1,\n            step=0.1,\n            value=0.5,\n            marks={i/10: str(i/10) for i in range(11)},\n            tooltip={\"always_visible\": False, \"placement\": \"bottom\"}\n        ),\n        # Repeat this pattern for other variables\n    ], style={\"width\": \"50%\", \"margin\": \"auto\"}),\n    dcc.Graph(id=\"city-graph\")\n])\n\n# Define callback to update the graph based on user input\n@app.callback(\n    Output(\"city-graph\", \"figure\"),\n    [Input(\"Median Rent\", \"value\"),\n     Input(\"Personal Income\", \"value\"),\n     Input(\"Median Sale Price\",\"value\"),\n     Input(\"Walkable\",\"value\"),\n     Input(\"Unemployment\",\"value\"),\n     Input(\"Purchasing Power\",\"value\"),\n     Input(\"Crime Rate\",\"value\")])\n    # Add more Inputs for other variables\ndef update_graph(importance_personal_income, importance_median_rent,importance_median_sale_price,importance_walkable,importance_unemployment,importance_purchasing_power,importance_crime):\n    # Weighted sum of variables\n    df[\"Weighted_Sum\"] = (df[\"Median.Rent\"] * importance_personal_income +\n                          df[\"personal.income\"] * importance_median_rent + df[\"median.sale.price\"]*importance_median_sale_price +df[\"Walkable\"]*importance_walkable+df[\"Unemployment\"]*importance_unemployment+\n                          df[\"Purchase_power_100_dollars\"]*importance_purchasing_power+df[\"Violent_Crime_Rate_per_100k\"]*importance_crime)\n    \n    # Define color scale mapping each political affiliation to a specific color\n    color_scale = {\n        \"D\": \"blue\",\n        \"R\": \"red\",\n        \"I\": \"yellow\",\n        \"Nonpartisan\": \"grey\"\n    }\n    \n    # Plotly scatter plot\n    fig = px.scatter_geo(df, lat='Latitude', lon='Longitude', scope='usa', size=\"Weighted_Sum\", color=\"Political_Affiliation\",\n                         color_discrete_map=color_scale, custom_data=[\"REGION\", \"Weighted_Sum\"])\n    \n    fig.update_layout(title=\"City Data Visualization on US Map\",\n                      mapbox_style=\"carto-positron\",\n                      mapbox_zoom=3,\n                      mapbox_center={\"lat\": 37.0902, \"lon\": -95.7129})\n    \n    fig.update_traces(hovertemplate='&lt;b&gt;%{customdata[0]}&lt;/b&gt;&lt;br&gt;Weighted Sum: %{customdata[1]:.2f}')\n    \n    return fig\n# Run the app\nif __name__ == \"__main__\":\n    app.run_server(debug=True,port=8052)"
-  },
-  {
-    "objectID": "about.html#contributers",
-    "href": "about.html#contributers",
-    "title": "About",
-    "section": "Contributers",
-    "text": "Contributers"
-  },
-  {
-    "objectID": "about.html#contributors",
-    "href": "about.html#contributors",
-    "title": "About",
-    "section": "Contributors",
-    "text": "Contributors\nNolan Penoyer - GitHub Shingai Nindi - GitHub Eric Dapkus - GitHub"
-  },
-  {
-    "objectID": "about.html#ethis",
-    "href": "about.html#ethis",
-    "title": "About",
-    "section": "Ethis",
-    "text": "Ethis"
-  },
-  {
-    "objectID": "about.html#ethic",
-    "href": "about.html#ethic",
-    "title": "About",
-    "section": "Ethic",
-    "text": "Ethic"
+    "text": "Have you ever dreamed of living in a big city?\nOr maybe you already live in one and you are looking for a new place to move to?\nDo you feel like you are missing out on something?\nIs there something more to life than what you are currently experiencing?\nIf you answered yes to any of these questions, then you’ve come to the right place!\nThis website is dedicated to helping people like you find the perfect city to live in. Whether you are an aspiring artist, a young professional, a graduate student, or a retiree, we have the perfect city for you. Our website is designed to help you find the perfect city based on essential living factors such as cost of living, quality of life, safety, and more. We have taken the most prominent metropolitan areas in the United States and provided their livability based on your personal preferences at your fingertips; so you can make an informed decision about where to live. All you have to do is adjust the sliders to your preferences and we will do the rest.\nThe bigger the circle, the better the city is for you! Additionally, we have provided a complementary table that ranks the cities based on your preferences.\nSo what are you waiting for? Find your next adventure now!"
   },
   {
     "objectID": "about.html#ethics-statement",
@@ -56,11 +21,18 @@
     "text": "Ethics Statement ???"
   },
   {
-    "objectID": "about.html#refrences",
-    "href": "about.html#refrences",
+    "objectID": "about.html#code",
+    "href": "about.html#code",
     "title": "About",
-    "section": "Refrences",
-    "text": "Refrences\nMedian Sale Price - (2024)\nMedian Rent Price - (2024)\nUnemployment rate - (2024)\nWalkability\nPersonal Income\nPurchasing Power\nCrime Stats\nParty Affiliation\nWeather"
+    "section": "Code",
+    "text": "Code\nGitHub Repository"
+  },
+  {
+    "objectID": "about.html#contributors",
+    "href": "about.html#contributors",
+    "title": "About",
+    "section": "Contributors",
+    "text": "Contributors\nNolan Penoyer - GitHub Shingai Nindi - GitHub Eric Dapkus - GitHub"
   },
   {
     "objectID": "about.html#data",
@@ -68,12 +40,5 @@
     "title": "About",
     "section": "Data",
     "text": "Data\nMedian Sale Price - (2024) Median Rent Price - (2024) Unemployment rate - (2024) Walkability - (2023) Personal Income - (2024) Purchasing Power - (2023) Crime Stats - (2024) Party Affiliation - (2024) Weather - (2024)"
-  },
-  {
-    "objectID": "about.html#code",
-    "href": "about.html#code",
-    "title": "About",
-    "section": "Code",
-    "text": "Code\nGitHub Repository"
   }
 ]
