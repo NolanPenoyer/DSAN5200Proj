@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Picking where to live",
+    "title": "Where to live",
     "section": "",
-    "text": "REGION\npersonal.income\nMedian.Rent\nmedian.sale.price\nWalkable\nUnemployment\nPurchase_power_100_dollars\nLatitude\nLongitude\nPolitical_Affiliation\nYear_Fahrenheit\nViolent_Crime_Rate_per_100k\nNon_Violent_Crime_Rate_per_100k\n\n\n\n\n0\nAtlanta\n0.145435\n0.244568\n0.200903\n0.302069\n0.258065\n0.747856\n33.7490\n-84.3880\nD\n62.6\n0.603151\n0.705136\n\n\n1\nAustin\n0.303252\n0.178534\n0.307280\n0.310345\n0.483871\n0.707976\n30.2672\n-97.7431\nD\n69.3\n0.262020\n0.368896\n\n\n2\nBaltimore\n0.250240\n0.195090\n0.165350\n0.237241\n0.193548\n0.505146\n39.2904\n-76.6122\nD\n55.6\n0.807988\n0.737275\n\n\n3\nBoston\n0.575018\n0.931803\n0.475169\n0.645517\n0.354839\n0.331046\n42.3601\n-71.0589\nD\n51.7\n0.124295\n0.135701\n\n\n4\nCharlotte\n0.160468\n0.173267\n0.209932\n0.333793\n0.451613\n0.860635\n35.2271\n-80.8431\nD\n60.9\n0.298170\n0.501457"
+    "text": "REGION\npersonal.income\nMedian.Rent\nmedian.sale.price\nWalkable\nUnemployment\nPurchase_power_100_dollars\nLatitude\nLongitude\nPolitical_Affiliation\nYear_Fahrenheit\nViolent_Crime_Rate_per_100k\nNon_Violent_Crime_Rate_per_100k\ncoast\n\n\n\n\n0\nAtlanta\n64107\n2113.00\n357000.0\n49.4\n3.0\n100.89\n33.7490\n-84.3880\nD\n62.6\n5727.52\n4776.43\neast\n\n\n2\nBaltimore\n71420\n1981.50\n325500.0\n44.7\n2.8\n95.23\n39.2904\n-76.6122\nD\n55.6\n6997.68\n4928.11\neast\n\n\n3\nBoston\n94082\n3939.50\n600000.0\n74.3\n3.3\n91.17\n42.3601\n-71.0589\nD\n51.7\n2758.22\n2089.02\neast\n\n\n4\nCharlotte\n65156\n1923.50\n365000.0\n51.7\n3.6\n103.52\n35.2271\n-80.8431\nD\n60.9\n3836.39\n3815.18\neast\n\n\n16\nMiami\n77732\n3056.50\n465000.0\n54.2\n2.5\n90.97\n25.7617\n-80.1918\nR\n76.9\n4750.89\n4014.18\neast\n\n\n19\nNew York\n84084\n4120.75\n565000.0\n100.0\n4.7\n87.28\n40.7128\n-74.0060\nD\n55.3\n1987.49\n1448.59\neast\n\n\n20\nOrlando\n53959\n2246.50\n380000.0\n32.4\n3.2\n100.19\n28.5383\n-81.3792\nD\n73.5\n6206.38\n5454.57\neast\n\n\n21\nPhiladelphia\n73291\n2340.25\n301250.0\n55.1\n3.8\n100.80\n39.9526\n-75.1652\nD\n55.8\n4037.27\n3063.48\neast\n\n\n31\nTampa\n60091\n2207.50\n365000.0\n35.4\n3.3\n101.04\n27.9506\n-82.4572\nD\n73.2\n2218.24\n1743.68\neast\n\n\n32\nVirginia Beach\n57873\n1826.00\n309750.0\n34.5\n3.0\n102.26\n36.8529\n-75.9780\nR\n65.0\n2083.40\n1934.62\neast\n\n\n33\nWashington, DC\n83010\n2657.25\n515000.0\n72.6\n3.0\n89.82\n38.9072\n-77.0369\nD\n58.2\n5104.96\n4156.22\neast"
   },
   {
     "objectID": "plot_attempt_2.html",
@@ -52,8 +52,8 @@
     "objectID": "about.html#ethics-statement",
     "href": "about.html#ethics-statement",
     "title": "About",
-    "section": "Ethics Statement",
-    "text": "Ethics Statement"
+    "section": "Ethics Statement ???",
+    "text": "Ethics Statement ???"
   },
   {
     "objectID": "about.html#refrences",
