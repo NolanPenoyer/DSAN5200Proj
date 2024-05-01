@@ -3,7 +3,7 @@
 ## DSAN 5200 Final Project
 
 Group 26:
-Nolan Penoyer,Eirc Dapkus, Shingai Nindi
+Nolan Penoyer, Eric Dapkus, Shingai Nindi
 
 This project is dedicated to helping people like you find the perfect city to live in. Whether you are an aspiring artist, a young professional, a graduate student, or a retiree, we have the ideal city for you. This project is designed to help you find the perfect place to live based on essential living factors such as cost, quality of life, safety, and more. We have taken the most prominent metropolitan areas in the United States and provided their livability based on your personal preferences at your fingertips so you can make an informed decision about where to live. All you have to do is adjust the sliders to your preferences, and we will do the rest.
 
