@@ -1,50 +1,48 @@
 
-# DSAN5200Proj
+# Deciding Where to Live
+## DSAN 5200 Final Project
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2INZynyo)
+Group 26:
+Nolan Penoyer,Eirc Dapkus, Shingai Nindi
 
-# Project Repo
+This project is dedicated to helping people like you find the perfect city to live in. Whether you are an aspiring artist, a young professional, a graduate student, or a retiree, we have the ideal city for you. This project is designed to help you find the perfect place to live based on essential living factors such as cost, quality of life, safety, and more. We have taken the most prominent metropolitan areas in the United States and provided their livability based on your personal preferences at your fingertips so you can make an informed decision about where to live. All you have to do is adjust the sliders to your preferences, and we will do the rest.
 
-This is the team repository you will be use for your project. All your team's work will happen here. 
+## Data
+- Zillow Median Home Sale Price
+https://www.zillow.com/research/data/
 
-Links of interest:
-* The project requirements are in the [`instructions.md`](instructions.md) document
-* The repository structure is described in the repository structure section](#repository-structure) below
-* You **will** make changes to this `README.md` file within your repository. These changes are described in the [instructions section](#instructions-for-modifying-this-readmemd-file) below.
+- Median Rent Price
+https://www.rent.com/research/average-rent-price-report/
 
-## Repository structure
+- Unemployment Rate
+https://www.bls.gov/web/metro/laummtrk.htm
 
-You will work within an **organized** repository and apply coding and development best practices. The repository has the following structure:
+- Walkability
+https://smartgrowthamerica.org/wp-content/uploads/2023/01/Foot-Traffic-Ahead-2023.1.pdf
 
-```.
-├── README.md
-├── code/
-├── data/
-├── img/
-└── website/
-```
+- Personal Income
+https://www.bea.gov/sites/default/files/2023-11/lapi1123msa.xlsx
 
-* The `code/` directory is where you will develop all your code.  You may add additional sub-directories as needed to modularize your development.
+- Purchasing Power
+https://taxfoundation.org/data/all/state/purchasing-power-most-expensive-us-cities-metros-2023/
 
-* The `data/` directory should contain your data files and should have multiple sub-directories (i.e. raw, processed, analytical, etc.) as needed.
+- Crime Statistics
+https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi
 
-* The `img/` directory should contain any external images that you need for your site. However, all your viz's should be generated programmatically in your source code.
+- Party Affiliation
+https://ballotpedia.org/Party_affiliation_of_the_mayors_of_the_100_largest_cities
 
-* The `website/` directory where the website will be deployed. It must be self-contained and accessible via an index.html within this sub-directory.  Any website asset (images, html, css, JavaScript source code) must be added to this directory. 
+- Weather
+https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature#North_America
 
-There is an empty placeholder file in each subdirectory called `placeholder-to-be-deleted.txt`. This file may be deleted **after** you save other files in those subdirectories. This file is needed to be able to keep the empty directory in the repo.
-
-Other files we expect to see at the top level of this repo may include:
-- `.gitignore`
-
-
-## Instructions for modifying this `README.md` file
-
-The README.md file in a repository usually contains additional information about your project. Currently this file contains information about the repository structure. However, for the wip and final submissions, you will make the following changes to this file:
-
-* You can delete the current content of the `README.md` file
-* Add a project title section
-* Add your team section with your team number and team member names
-* Add an executive summary section describing your project
-* Provide a description of all your code files, datasets, etc.
+## References
+- America, Smart Growth. 2023. “Foot Traffic Ahead.” 2023. https://smartgrowthamerica.org/wp-content/uploads/2023/01/Foot-Traffic-Ahead-2023.1.pdf.
+- Ballotpedia. 2024. “Party Affiliation of the Mayors of the 100 Largest Cities.” 2024. https://ballotpedia.org/Party_affiliation_of_the_mayors_of_the_100_largest_cities.
+- Economic Analysis, Bureau of. 2024. “Personal Income.” 2024. https://www.bea.gov/sites/default/files/2023-11/lapi1123msa.xlsx.
+- Foundation, Tax. 2023. 2023. https://taxfoundation.org/data/all/state/purchasing-power-most-expensive-us-cities-metros-2023/.
+- Investigation, Federal Bureau of. 2024. “FBI Crime Data API.” 2024. https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi.
+- Labor Statistics, Bureau of. 2024. “Unemployment Rates for Metropolitan Areas.” 2024. https://www.bls.gov/web/metro/laummtrk.htm.
+- Rent.Research. 2024. “April 2024 Rent Report.” 2024. https://www.rent.com/research/average-rent-price-report/.
+- Wikipedia. 2024. “List of Cities by Average Temperature.” 2024. https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature#North_America.
+- Zillow, Inc. 2024. “Zillow, Inc. Housing Data.” 2024. https://www.zillow.com/research/data/.
 
